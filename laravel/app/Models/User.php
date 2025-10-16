@@ -46,5 +46,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function modules()
+    {
+        return $this->belongsToMany(Module::class, 'user_modules')
+        ->withPivot('active')
+        ->withTimestamps();
+    }
+
+    public function shortlinks ()
+
+    {
+        return $this->hasMany(ShorLinks::class);
+    }
 }
 
