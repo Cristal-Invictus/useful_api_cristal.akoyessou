@@ -59,5 +59,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(ShorLinks::class);
     }
+
+    public function timeSessions()
+   {
+    return $this->hasMany(\App\Models\TimeSession::class);
+   }
+
 }
 
