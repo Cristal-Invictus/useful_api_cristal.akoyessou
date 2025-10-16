@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controller\ModuleController;
 use App\Http\Controllers\ShortLinkController;
 use App\Http\Controllers\WalletController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -37,7 +39,17 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/wallet/transactions',  [WalletController::class, 'transactions']);
 });
 
-   //
+   //Pour les produits et commandes
+    Route::middleware(['auth:sanctum','module.active:3'])->group(function () {
+// Produits
+    Route::post('/products', [ProductController::class, 'store']);
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::post('/products/{id}/restock', [ProductController::class, 'restock']);
+
+
+// Commandes
+    Route::post('/orders', [OrderController::class, 'store']);
+});
 
 });
 
