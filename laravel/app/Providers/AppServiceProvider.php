@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Http\Middleware;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,4 +22,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+    protected $routeMiddleware = [
+    'check.module' => CheckModuleActive::class,
+];
 }

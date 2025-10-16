@@ -24,9 +24,19 @@ class ModuleSeeder extends Seeder
                 'description' => 'Gestion du solde et transferts'
             ],
             [
-                'name' => 'Marketplace',
-                'description' => 'Acheter et vendre des produits'
+                'name' => 'Marketplace + Stock Manager',
+                'description' => 'Gestion de produits et commandes'
             ],
+
+            [
+                'name' => 'Time Tracker',
+                'description' => 'Suivi des sessions et durées',
+            ],
+
+            [
+                'name' => 'Investment Tracker',
+                'description' => 'Gestion du portefeuille d’investissement',
+            ]
         ]);
 
     }
