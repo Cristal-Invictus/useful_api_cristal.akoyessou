@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Models\Module;
 use App\Models\UserModule;
 
+
 class checkModuleActive
 {
     /**
@@ -39,7 +40,7 @@ class checkModuleActive
             'error' => 'Module inactive. Please activate this module to use it.'
             ], 403);
             }
-            
+
             return $next($request);
             }
 }
